@@ -33,7 +33,7 @@ cp "~/Library/Application Support/Sublime Text 3/Packages" ~/migration
 
 
 # iTerm settings.
-  # Prefs, General, Use settings from Folder
+# Prefs, General, Use settings from Folder
 
 # Finder settings
 
@@ -94,6 +94,27 @@ $HOME/dotfiles/install/npm.sh
 npm install -g git-open
 # trash as the safe `rm` alternative
 npm install -g trash-cli
+
+
+###############################################################################
+# Apache                                                                        #
+###############################################################################
+
+$HOME/dotfiles/install/httpd.sh
+
+
+###############################################################################
+# PHP                                                                        #
+###############################################################################
+
+$HOME/dotfiles/install/php.sh
+
+
+###############################################################################
+# MySQL                                                                        #
+###############################################################################
+
+$HOME/dotfiles/install/mysql.sh
 
 
 ###############################################################################

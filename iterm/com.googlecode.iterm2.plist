@@ -6358,7 +6358,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>nicksp</string>
+			<string>kepek</string>
 			<key>Non Ascii Font</key>
 			<string>SauceCodePowerline-Regular 15</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -6551,7 +6551,7 @@
 			<key>Window Type</key>
 			<integer>1</integer>
 			<key>Working Directory</key>
-			<string>/Users/nicksp/Documents/Projects</string>
+			<string>/Users/kepek/Documents/Projects</string>
 		</dict>
 	</array>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
@@ -6650,7 +6650,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/nicksp/dotfiles/iterm</string>
+	<string>/Users/kepek/dotfiles/iterm</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>

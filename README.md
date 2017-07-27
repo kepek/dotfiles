@@ -1,8 +1,10 @@
-# Nick Plekhanov's Dotfiles
+# Michal Kechner's Dotfiles
+
+> Based on [Nick Plekhanov's Dotfiles](https://github.com/nicksp/dotfiles/)
 
 This is a collection of dotfiles and scripts I use for customizing OS X to my liking and setting up the software development tools I use on a day-to-day basis. They should be cloned to your home directory so that the path is `~/dotfiles/`.  The included setup script creates symlinks from your home directory to the files which are located in `~/dotfiles/`.
 
-![Terminal.app](https://raw.github.com/nicksp/dotfiles/master/iterm/nick-terminal.png)
+![Terminal.app](https://raw.github.com/kepek/dotfiles/master/iterm/nick-terminal.png)
 
 The setup script is smart enough to back up your existing dotfiles into a `~/dotfiles_old/` directory if you already have any dotfiles of the same name as the dotfile symlinks being created in your home directory.
 
@@ -22,17 +24,53 @@ So, to recap, the install script will:
 - [Stop words](dict/) lists that I use with Marked 2
 - Git aliases
 - zsh aliases
-- Custom zsh theme with Git and battery status, etc: [nicktheme](zsh/themes/nick.zsh-theme)
+- Custom zsh theme with Git and battery status, etc: [kepektheme](zsh/themes/kepek.zsh-theme)
 - Sensible [OS X defaults](osx/set-defaults.sh)
 - [Install script](setup.sh)
 
 ## Installation
 
+#### 1. Link iCloud
+
 ```sh
-$ git clone https://github.com/nicksp/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles
-$ chmod +x setup.sh
-$ ./setup.sh
+(cd ~ && ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs iCloud)
+```
+
+#### 2. Link SSH
+
+```sh
+(ln -s ~/iCloud/dotfiles/ssh ~/.ssh && chmod 600 ~/.ssh/id_rsa)
+```
+
+#### 3. Link Oh My Zsh
+
+```sh
+(ln -s ~/iCloud/dotfiles/zsh.local ~/.zsh.local)
+```
+
+#### 4. Link Git Config
+
+```sh
+(ln -s ~/iCloud/dotfiles/gitconfig.local ~/.gitconfig.local)
+```
+
+#### 5. Install [Powerline Fonts](https://github.com/powerline/fonts)
+
+```sh
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+```
+
+#### 6. Setup [.dotfiles](https://github.com/kepek/dotfiles)
+
+```sh
+git clone https://github.com/kepek/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+chmod +x setup.sh
+./setup.sh
 ```
 
 ## Remotely install using curl
@@ -40,13 +78,13 @@ $ ./setup.sh
 Alternatively, you can install this into `~/dotfiles` remotely without Git using curl:
 
 ```sh
-sh -c "`curl -fsSL https://raw.github.com/nicksp/dotfiles/master/remote-setup.sh`"
+sh -c "`curl -fsSL https://raw.github.com/kepek/dotfiles/master/remote-setup.sh`"
 ```
 
 Or, using wget:
 
 ```sh
-sh -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/nicksp/dotfiles/master/remote-setup.sh`"
+sh -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/kepek/dotfiles/master/remote-setup.sh`"
 ```
 
 ## Customize
@@ -63,6 +101,11 @@ after all the other [shell related files](shell), thus, allowing its
 content to add to or overwrite the existing aliases, settings, PATH,
 etc.
 
+```sh
+export USER_EMAIL=firstname.lastname@domain.tld
+export DOTFILES_PATH=~/iCloud/dotfiles
+```
+
 #### `~/.gitconfig.local`
 
 If the `~/.gitconfig.local` file exists, it will be automatically
@@ -74,13 +117,18 @@ as the `git` user credentials, e.g.:
 
 ```sh
 [user]
-  name = Nick Plekhanov
-  email = nick@example.com
+  name = John Doe
+  email = john@doe.com
 ```
 
 ## OS X Defaults
 
 My favorite part of this repo is the [set-defaults](osx/set-defaults.sh) script for OS X.
+
+## VS Code Settings
+
+1. Read the [Code Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) instructions.
+1. Download my settings by using this [Gist ID](vscode/settings.txt).
 
 ## Resources
 

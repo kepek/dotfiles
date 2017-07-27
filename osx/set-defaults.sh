@@ -8,7 +8,7 @@
 #
 
 # Set computer name
-COMPUTERNAME="Nick Plekhanov's MBP"
+COMPUTERNAME="kepek-MacBookPro15"
 HOSTNAME='mbp'
 LOCALHOSTNAME='mbp'
 
@@ -111,9 +111,9 @@ defaults write -g KeyRepeat -int 0
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set language and text formats. (USD and Imperial Units)
-defaults write -g AppleLanguages -array "en" "nl"
+defaults write -g AppleLanguages -array "en" "pl"
 defaults write -g AppleLocale -string "en_US@currency=USD"
-defaults write -g AppleMeasurementUnits -string "Inches"
+defaults write -g AppleMeasurementUnits -string "Centimeters"
 defaults write -g AppleMetricUnits -bool false
 
 ###############################################################################
@@ -140,9 +140,11 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to desktop and disable the horrific drop-shadow.
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
-defaults write com.apple.screencapture type -string "png"
+mkdir -p "${SCREENSHOTS_PATH}"
+defaults write com.apple.screencapture location "${SCREENSHOTS_PATH}"
+defaults write com.apple.screencapture type "png"
 defaults write com.apple.screencapture disable-shadow -bool true
+killall SystemUIServer
 
 # Enable sub-pixel rendering on non-Apple LCDs.
 defaults write NSGlobalDomain AppleFontSmoothing -int 2

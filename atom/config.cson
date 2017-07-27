@@ -4,10 +4,7 @@
     disabledPackages: [
       "react"
     ]
-    themes: [
-      "one-dark-ui"
-      "cobalt2-syntax"
-    ]
+    telemetryConsent: "limited"
   editor:
     fontFamily: "Menlo"
     fontSize: 15

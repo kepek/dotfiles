@@ -1,11 +1,14 @@
 # Defaults
 export SHELL=/bin/zsh
 
+# User Dotfiles
+export DOTFILES_PATH="~/iCloud/dotfiles"
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
+  export EDITOR='vim'
 else
-  export EDITOR='nano'
+  export EDITOR='vim'
 fi
 
 # Prefer US English and use UTF-8
@@ -15,8 +18,14 @@ export LANG="en_US"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# User Email
+export USER_EMAIL="john@doe.com"
+
+# Screenshots
+export SCREENSHOTS_PATH="${HOME}/Desktop/Screenshots"
+
 # SSH
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"

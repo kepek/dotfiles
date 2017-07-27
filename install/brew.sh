@@ -12,15 +12,16 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap homebrew/versions
-brew tap homebrew/dupes
+brew tap homebrew/core
+brew tap homebrew/php
+brew tap homebrew/apache
 brew tap Goles/battery
 
 # Make sure we’re using the latest Homebrew
 brew update
 
 # Upgrade any already-installed formulae
-brew upgrade --all
+brew upgrade
 
 # Install the Homebrew packages I use on a day-to-day basis.
 #
@@ -44,9 +45,11 @@ brew upgrade --all
 # which version I'm using.
 
 apps=(
-    rvm
-    nvm
+    httpd24 --with-privileged-ports --with-http2
+    ngrep
     mongodb
+    mysql
+    elasticsearch
     bash-completion2
     coreutils
     moreutils
@@ -56,12 +59,13 @@ apps=(
     ponysay
     git
     git-extras
+    git-lfs
     hub
     gnu-sed --with-default-names
     grep --with-default-names
-    homebrew/completions/brew-cask-completion
-    homebrew/dupes/grep
-    homebrew/dupes/openssh
+    brew-cask-completion
+    grep
+    openssh
     mtr
     autojump
     imagemagick --with-webp
@@ -72,6 +76,44 @@ apps=(
     ffmpeg --with-libvpx
     wget
     wifi-password
+    dark-mode
+    autoconf
+    boost
+    composer
+    freetype
+    gdbm
+    gettext
+    highlight
+    icu4c
+    jpeg
+    libpng
+    libxml2
+    lua
+    openssl
+    pcre
+    php71 # php56
+    php71-mailparse # php56-mailparse
+    python3
+    readline
+    sqlite
+    unixodbc
+    xz
+    imagemagick --with-webp
+    lynx
+    p7zip
+    pigz
+    pv
+    rename
+    rhino
+    speedtest_cli
+    ssh-copy-id
+    testssl
+    tree
+    vbindiff
+    webkit2png
+    zopfli
+    yarn
+    watchman
 )
 
 brew install "${apps[@]}"
